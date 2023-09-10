@@ -1,4 +1,6 @@
-var collection = document.getElementsByClassName("list-group-item");
-for (let i = 0; i < collection.length; i++) {
-  collection[i].style.backgroundColor = "red";
-}
+var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor="green";
+
+var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.display="none";
+
