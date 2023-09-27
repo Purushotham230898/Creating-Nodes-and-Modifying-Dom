@@ -10,52 +10,25 @@ itemList.addEventListener('click', removeItem);
 filter.addEventListener('keyup', filterItems);
 
 // Add item
-function addItem(e) {
-  e.preventDefault();
-
-  // Get input value
-  var newItem = document.getElementById('item').value;
-
-  // Create new li element
-  var li = document.createElement('li');
-  // Add class
-  li.className = 'list-group-item';
-  // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
-
-  // Create edit button element
-  var editBtn = document.createElement('button');
-  // Add classes to edit button
-  editBtn.className = 'btn btn-primary btn-sm right edit';
-  // Append text node
-  editBtn.appendChild(document.createTextNode('Edit'));
-
-  // Create delete button element
-  var deleteBtn = document.createElement('button');
-  // Add classes to delete button
-  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
-  // Append text node
-  deleteBtn.appendChild(document.createTextNode('X'));
-
-  // Append buttons and li to list
-  li.appendChild(editBtn);
-  li.appendChild(deleteBtn);
-  itemList.appendChild(li);
-}
-
-/*// Add item
 function addItem(e){
   e.preventDefault();
 
   // Get input value
   var newItem = document.getElementById('item').value;
-
+const description=document.getElementById('description').value;
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  const descriptionNode=document.createTextNode(description);
+
+  li.appendChild(description);
+
+  var editBtn = document.createElement('button');
+  editBtn.className = 'btn btn-primary btn-sm float-right edit'; 
+  editBtn.appendChild(document.createTextNode('Edit'));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
@@ -67,12 +40,13 @@ function addItem(e){
   deleteBtn.appendChild(document.createTextNode('X'));
 
   // Append button to li
+  li.appendChild(editBtn);
   li.appendChild(deleteBtn);
+  
 
   // Append li to list
   itemList.appendChild(li);
-}*/
-
+}
 
 // Remove item
 function removeItem(e){
